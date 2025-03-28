@@ -1,4 +1,4 @@
-# Hi there, I'm Subhash! 👋  
+  1`# Hi there, I'm Subhash! 👋  
 
 🚀 **Software Developer | Tech Enthusiast | Open Source Contributor**  
 
@@ -22,7 +22,7 @@
 ## 🚀 Skills & Technologies  
 
 ### **Languages**  
-![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white)  
+![Java](https://www.google.com/url?sa=i&url=https%3A%2F%2Ficonscout.com%2Ffree-icon%2Fjava-60&psig=AOvVaw0ZeKeJ-6tRCiWEf3XiZ3FB&ust=1743228759854000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJDX2taPrIwDFQAAAAAdAAAAABAE)  
 ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)  
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)  
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)  
