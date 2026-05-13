@@ -1,0 +1,85 @@
+<svg width="1200" height="240" viewBox="0 0 1200 240" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <!-- Background -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+
+    <!-- Accent -->
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="240" fill="url(#bg)"/>
+
+  <!-- Animated Top Line -->
+  <rect x="-300" y="0" width="300" height="2" fill="url(#accent)">
+    <animate attributeName="x" values="-300;1200" dur="6s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Floating subtle dots -->
+  <circle cx="200" cy="200" r="2" fill="#94a3b8" opacity="0.3">
+    <animateTransform attributeName="transform" type="translate"
+      values="0 0; 0 -10; 0 0" dur="5s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="900" cy="180" r="2" fill="#cbd5f5" opacity="0.25">
+    <animateTransform attributeName="transform" type="translate"
+      values="0 0; 0 -12; 0 0" dur="6s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Content -->
+  <g transform="translate(120,90)">
+
+    <!-- Name -->
+    <text x="0" y="0"
+          font-size="38"
+          font-family="Inter, Segoe UI, sans-serif"
+          fill="#f9fafb"
+          font-weight="600"
+          opacity="0">
+      Abhiraj Kumar
+      <animate attributeName="opacity" from="0" to="1" dur="1s" fill="freeze"/>
+    </text>
+
+    <!-- Subtitle (fade swap animation) -->
+    <text x="0" y="35"
+          font-size="18"
+          font-family="Inter, Segoe UI, sans-serif"
+          fill="#9ca3af">
+
+      <tspan>
+        Full Stack Developer
+        <animate attributeName="opacity" values="1;0;0;1" dur="6s" repeatCount="indefinite"/>
+      </tspan>
+
+      <tspan dx="-170">
+        AI/ML Engineer
+        <animate attributeName="opacity" values="0;1;1;0" dur="6s" repeatCount="indefinite"/>
+      </tspan>
+
+    </text>
+
+    <!-- Accent Line (draw animation) -->
+    <rect x="0" y="55" width="0" height="3" fill="url(#accent)">
+      <animate attributeName="width" values="0;80" dur="1.2s" fill="freeze"/>
+    </rect>
+
+    <!-- Tagline -->
+    <text x="0" y="90"
+          font-size="16"
+          font-family="Inter, Segoe UI, sans-serif"
+          fill="#cbd5f5"
+          opacity="0">
+      Building scalable systems and real-world AI solutions
+      <animate attributeName="opacity" from="0" to="1" dur="1.5s" fill="freeze"/>
+    </text>
+
+  </g>
+
+</svg>
