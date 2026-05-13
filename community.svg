@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="800" height="200">
+  <defs>
+    <linearGradient id="comBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="comBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1a0a2e"/>
+      <stop offset="100%" stop-color="#21262d"/>
+    </linearGradient>
+    <linearGradient id="comShimmer" x1="-100%" y1="0%" x2="-60%" y2="0%" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#fff" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#fff" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+      <animate attributeName="x1" values="-800;900;-800" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="-400;1300;-400" dur="4s" repeatCount="indefinite"/>
+    </linearGradient>
+    <clipPath id="comClip"><rect width="800" height="200" rx="10"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#comClip)">
+    <rect width="800" height="200" fill="url(#comBg)" rx="10"/>
+    <rect width="800" height="36" fill="url(#comBar)"/>
+    <rect width="800" height="36" fill="url(#comShimmer)"/>
+    <circle cx="20" cy="18" r="6" fill="#ff5f57"/>
+    <circle cx="40" cy="18" r="6" fill="#febc2e"/>
+    <circle cx="60" cy="18" r="6" fill="#28c840"/>
+    <text x="400" y="23" text-anchor="middle" font-family="'Fira Code',monospace" font-size="12" fill="#8b949e">subhash@github — community.sh</text>
+    <rect width="799" height="199" rx="10" fill="none" stroke="#30363d" stroke-width="1"/>
+
+    <!-- Prompt -->
+    <text x="20" y="60" font-family="'Fira Code',monospace" font-size="13" fill="#ff5540">$</text>
+    <text x="34" y="60" font-family="'Fira Code',monospace" font-size="13" fill="#8b949e"> neofetch --community</text>
+
+    <!-- Stats boxes -->
+    <!-- Box 1 -->
+    <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.3s" begin="0.4s" fill="freeze"/>
+      <rect x="20" y="75" width="180" height="80" rx="8" fill="#161b22" stroke="#30363d" stroke-width="0.5"/>
+      <text x="110" y="100" text-anchor="middle" font-family="'Fira Code',monospace" font-size="28" font-weight="bold" fill="#ff5540">100K+</text>
+      <text x="110" y="120" text-anchor="middle" font-family="'Fira Code',monospace" font-size="10" fill="#8b949e">Community Builders</text>
+      <text x="110" y="140" text-anchor="middle" font-family="'Fira Code',monospace" font-size="9" fill="#58a6ff">HackWithIndia Lead</text>
+    </g>
+
+    <!-- Box 2 -->
+    <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.3s" begin="0.7s" fill="freeze"/>
+      <rect x="215" y="75" width="180" height="80" rx="8" fill="#161b22" stroke="#30363d" stroke-width="0.5"/>
+      <text x="305" y="100" text-anchor="middle" font-family="'Fira Code',monospace" font-size="28" font-weight="bold" fill="#3fb950">10+</text>
+      <text x="305" y="120" text-anchor="middle" font-family="'Fira Code',monospace" font-size="10" fill="#8b949e">Websites Deployed</text>
+      <text x="305" y="140" text-anchor="middle" font-family="'Fira Code',monospace" font-size="9" fill="#58a6ff">Full-Stack Production</text>
+    </g>
+
+    <!-- Box 3 -->
+    <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.3s" begin="1.0s" fill="freeze"/>
+      <rect x="410" y="75" width="180" height="80" rx="8" fill="#161b22" stroke="#30363d" stroke-width="0.5"/>
+      <text x="500" y="100" text-anchor="middle" font-family="'Fira Code',monospace" font-size="28" font-weight="bold" fill="#e3b341">500K+</text>
+      <text x="500" y="120" text-anchor="middle" font-family="'Fira Code',monospace" font-size="10" fill="#8b949e">Platform Users</text>
+      <text x="500" y="140" text-anchor="middle" font-family="'Fira Code',monospace" font-size="9" fill="#58a6ff">DevNovate Events</text>
+    </g>
+
+    <!-- Box 4 -->
+    <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.3s" begin="1.3s" fill="freeze"/>
+      <rect x="605" y="75" width="175" height="80" rx="8" fill="#161b22" stroke="#30363d" stroke-width="0.5"/>
+      <text x="692" y="100" text-anchor="middle" font-family="'Fira Code',monospace" font-size="28" font-weight="bold" fill="#bc8cff">20K+</text>
+      <text x="692" y="120" text-anchor="middle" font-family="'Fira Code',monospace" font-size="10" fill="#8b949e">Entrepreneurs</text>
+      <text x="692" y="140" text-anchor="middle" font-family="'Fira Code',monospace" font-size="9" fill="#58a6ff">Campus Tank Events</text>
+    </g>
+
+    <!-- Status bar -->
+    <rect x="0" y="182" width="800" height="18" fill="#161b22"/>
+    <text x="20" y="194" font-family="'Fira Code',monospace" font-size="10" fill="#3fb950">● main</text>
+    <text x="620" y="194" font-family="'Fira Code',monospace" font-size="10" fill="#8b949e">India Lead · HWI</text>
+  </g>
+</svg>
