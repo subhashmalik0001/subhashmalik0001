@@ -1,135 +1,82 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="800" height="520">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480">
   <defs>
-    <linearGradient id="expBg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#0d1117"/>
-      <stop offset="100%" stop-color="#161b22"/>
+    <linearGradient id="eBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a12"/>
+      <stop offset="100%" stop-color="#0f0f1a"/>
     </linearGradient>
-    <linearGradient id="expBar" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#1a0a2e"/>
-      <stop offset="100%" stop-color="#21262d"/>
+    <linearGradient id="eBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e30"/>
+      <stop offset="100%" stop-color="#18182a"/>
     </linearGradient>
-    <linearGradient id="expShimmer" x1="-100%" y1="0%" x2="-60%" y2="0%" gradientUnits="userSpaceOnUse">
-      <stop offset="0%"   stop-color="#fff" stop-opacity="0"/>
-      <stop offset="50%"  stop-color="#fff" stop-opacity="0.06"/>
-      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
-      <animate attributeName="x1" values="-800;900;-800" dur="4s" repeatCount="indefinite"/>
-      <animate attributeName="x2" values="-400;1300;-400" dur="4s" repeatCount="indefinite"/>
+    <linearGradient id="eLine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e85d4a" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0.3"/>
     </linearGradient>
-    <linearGradient id="timelineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#ff5540"/>
-      <stop offset="50%" stop-color="#bc8cff"/>
-      <stop offset="100%" stop-color="#58a6ff"/>
-    </linearGradient>
-    <filter id="glowDot">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <clipPath id="expClip"><rect width="800" height="520" rx="10"/></clipPath>
+    <clipPath id="eClip"><rect width="800" height="480" rx="12"/></clipPath>
   </defs>
 
-  <g clip-path="url(#expClip)">
-    <rect width="800" height="520" fill="url(#expBg)" rx="10"/>
+  <g clip-path="url(#eClip)">
+    <rect width="800" height="480" fill="url(#eBg)" rx="12"/>
+    <rect width="799" height="479" rx="12" fill="none" stroke="url(#eBorder)" stroke-width="1" x="0.5" y="0.5"/>
+    <rect x="0" y="0" width="3" height="480" fill="url(#eLine)"/>
 
-    <!-- Title bar -->
-    <rect width="800" height="36" fill="url(#expBar)"/>
-    <rect width="800" height="36" fill="url(#expShimmer)"/>
-    <circle cx="20" cy="18" r="6" fill="#ff5f57"/>
-    <circle cx="40" cy="18" r="6" fill="#febc2e"/>
-    <circle cx="60" cy="18" r="6" fill="#28c840"/>
-    <text x="400" y="23" text-anchor="middle" font-family="'Fira Code',monospace" font-size="12" fill="#8b949e">subhash@github — experience.log</text>
+    <!-- Subtle background accents -->
+    <circle cx="750" cy="60" r="80" fill="#7c3aed" opacity="0.02"/>
+    <circle cx="50" cy="420" r="60" fill="#e85d4a" opacity="0.02"/>
 
-    <!-- Border -->
-    <rect width="799" height="519" rx="10" fill="none" stroke="#30363d" stroke-width="1"/>
-
-    <!-- Prompt -->
-    <text x="20" y="60" font-family="'Fira Code',monospace" font-size="13" fill="#ff5540">$</text>
-    <text x="34" y="60" font-family="'Fira Code',monospace" font-size="13" fill="#8b949e"> cat experience.log --timeline</text>
+    <!-- Header -->
+    <text x="28" y="36" font-family="'SF Pro Display','Helvetica Neue',sans-serif" font-size="11" font-weight="600" letter-spacing="3" fill="#52525b">EXPERIENCE</text>
+    <rect x="28" y="46" width="30" height="1.5" rx="0.75" fill="#e85d4a" opacity="0.6"/>
 
     <!-- Timeline line -->
-    <rect x="48" y="78" width="3" height="420" rx="1.5" fill="url(#timelineGrad)" opacity="0">
-      <animate attributeName="opacity" values="0;0.4" dur="0.5s" begin="0.3s" fill="freeze"/>
+    <rect x="44" y="65" width="1.5" height="395" rx="0.75" fill="url(#eLine)" opacity="0">
+      <animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.2s" fill="freeze"/>
     </rect>
 
-    <!-- ═══ Entry 1: CU-TBI ═══ -->
-    <!-- Dot -->
-    <circle cx="49" cy="100" r="7" fill="#ff5540" filter="url(#glowDot)" opacity="0">
-      <animate attributeName="opacity" values="0;1" dur="0.2s" begin="0.5s" fill="freeze"/>
-      <animate attributeName="r" values="7;9;7" dur="2s" begin="0.7s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="49" cy="100" r="3" fill="#0d1117" opacity="0">
-      <animate attributeName="opacity" values="0;1" dur="0.2s" begin="0.5s" fill="freeze"/>
-    </circle>
-    <!-- Content -->
-    <g opacity="0">
-      <animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.6s" fill="freeze"/>
-      <rect x="70" y="80" width="700" height="85" rx="8" fill="#161b22" stroke="#30363d" stroke-width="0.5"/>
-      <rect x="70" y="80" width="4" height="85" rx="2" fill="#ff5540"/>
-      <text x="88" y="100" font-family="'Fira Code',monospace" font-size="13" font-weight="bold" fill="#ff5540">CU-TBI (Chandigarh University)</text>
-      <text x="620" y="100" font-family="'Fira Code',monospace" font-size="10" fill="#3fb950">May 2025 - Present</text>
-      <text x="88" y="118" font-family="'Fira Code',monospace" font-size="11" fill="#58a6ff">Web Developer &amp; Growth Operations Executive</text>
-      <text x="88" y="138" font-family="'Fira Code',monospace" font-size="10" fill="#8b949e">Developed 10+ full-stack websites for startups</text>
-      <text x="88" y="153" font-family="'Fira Code',monospace" font-size="10" fill="#8b949e">Co-launched Campus Tank with apna &amp; Venture Catalysts++</text>
+    <!-- Entry 1: CU-TBI -->
+    <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.4s" fill="freeze"/>
+      <!-- Dot -->
+      <circle cx="45" cy="85" r="5" fill="#0a0a12" stroke="#e85d4a" stroke-width="2"/>
+      <circle cx="45" cy="85" r="2" fill="#e85d4a"/>
+      <!-- Content -->
+      <text x="65" y="82" font-family="'SF Pro Display','Helvetica Neue',sans-serif" font-size="10" font-weight="500" letter-spacing="1" fill="#e85d4a">MAY 2025 — PRESENT</text>
+      <text x="65" y="102" font-family="'SF Pro Display','Helvetica Neue',sans-serif" font-size="15" font-weight="700" fill="#e4e4e7">CU-TBI · Chandigarh University</text>
+      <text x="65" y="120" font-family="'SF Pro Display','Helvetica Neue',sans-serif" font-size="12" fill="#a78bfa">Web Developer &amp; Growth Operations Executive</text>
+      <text x="65" y="140" font-family="'SF Pro Display','Helvetica Neue',sans-serif" font-size="11" fill="#71717a">→ Developed 10+ full-stack websites for startups</text>
+      <text x="65" y="157" font-family="'SF Pro Display','Helvetica Neue',sans-serif" font-size="11" fill="#71717a">→ Co-launched Campus Tank with Venture Catalysts++ &amp; apna</text>
     </g>
 
-    <!-- ═══ Entry 2: Thrift Store ═══ -->
-    <circle cx="49" cy="205" r="7" fill="#bc8cff" filter="url(#glowDot)" opacity="0">
-      <animate attributeName="opacity" values="0;1" dur="0.2s" begin="1.2s" fill="freeze"/>
-      <animate attributeName="r" values="7;9;7" dur="2.5s" begin="1.4s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="49" cy="205" r="3" fill="#0d1117" opacity="0">
-      <animate attributeName="opacity" values="0;1" dur="0.2s" begin="1.2s" fill="freeze"/>
-    </circle>
-    <g opacity="0">
-      <animate attributeName="opacity" values="0;1" dur="0.4s" begin="1.3s" fill="freeze"/>
-      <rect x="70" y="185" width="700" height="75" rx="8" fill="#161b22" stroke="#30363d" stroke-width="0.5"/>
-      <rect x="70" y="185" width="4" height="75" rx="2" fill="#bc8cff"/>
-      <text x="88" y="205" font-family="'Fira Code',monospace" font-size="13" font-weight="bold" fill="#bc8cff">Thrift Store (Founder)</text>
-      <text x="620" y="205" font-family="'Fira Code',monospace" font-size="10" fill="#3fb950">Apr 2025 - Present</text>
-      <text x="88" y="223" font-family="'Fira Code',monospace" font-size="11" fill="#58a6ff">Founder &amp; CEO</text>
-      <text x="88" y="243" font-family="'Fira Code',monospace" font-size="10" fill="#8b949e">Built sustainable fashion e-commerce platform</text>
+    <!-- Entry 2: Thrift Store -->
+    <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.8s" fill="freeze"/>
+      <circle cx="45" cy="195" r="5" fill="#0a0a12" stroke="#a78bfa" stroke-width="2"/>
+      <circle cx="45" cy="195" r="2" fill="#a78bfa"/>
+      <text x="65" y="192" font-family="'SF Pro Display','Helvetica Neue',sans-serif" font-size="10" font-weight="500" letter-spacing="1" fill="#a78bfa">APR 2025 — PRESENT</text>
+      <text x="65" y="212" font-family="'SF Pro Display','Helvetica Neue',sans-serif" font-size="15" font-weight="700" fill="#e4e4e7">Thrift Store · Founder &amp; CEO</text>
+      <text x="65" y="230" font-family="'SF Pro Display','Helvetica Neue',sans-serif" font-size="12" fill="#22c55e">Sustainable Fashion E-Commerce Startup</text>
+      <text x="65" y="250" font-family="'SF Pro Display','Helvetica Neue',sans-serif" font-size="11" fill="#71717a">→ Built platform with MERN Stack, Firebase &amp; Stripe API</text>
+      <text x="65" y="267" font-family="'SF Pro Display','Helvetica Neue',sans-serif" font-size="11" fill="#71717a">→ Scaled operations through digital marketing strategies</text>
     </g>
 
-    <!-- ═══ Entry 3: DevNovate ═══ -->
-    <circle cx="49" cy="300" r="7" fill="#e3b341" filter="url(#glowDot)" opacity="0">
-      <animate attributeName="opacity" values="0;1" dur="0.2s" begin="1.9s" fill="freeze"/>
-      <animate attributeName="r" values="7;9;7" dur="3s" begin="2.1s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="49" cy="300" r="3" fill="#0d1117" opacity="0">
-      <animate attributeName="opacity" values="0;1" dur="0.2s" begin="1.9s" fill="freeze"/>
-    </circle>
-    <g opacity="0">
-      <animate attributeName="opacity" values="0;1" dur="0.4s" begin="2.0s" fill="freeze"/>
-      <rect x="70" y="280" width="700" height="85" rx="8" fill="#161b22" stroke="#30363d" stroke-width="0.5"/>
-      <rect x="70" y="280" width="4" height="85" rx="2" fill="#e3b341"/>
-      <text x="88" y="300" font-family="'Fira Code',monospace" font-size="13" font-weight="bold" fill="#e3b341">DevNovate Technologies</text>
-      <text x="620" y="300" font-family="'Fira Code',monospace" font-size="10" fill="#3fb950">Dec 2024 - May 2025</text>
-      <text x="88" y="318" font-family="'Fira Code',monospace" font-size="11" fill="#58a6ff">Engineering &amp; Product Operation Manager</text>
-      <text x="88" y="338" font-family="'Fira Code',monospace" font-size="10" fill="#8b949e">Scaled event platform to 500,000+ users across 100+ events</text>
-      <text x="88" y="353" font-family="'Fira Code',monospace" font-size="10" fill="#8b949e">Increased active user base by 45%</text>
+    <!-- Entry 3: DevNovate -->
+    <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="1.2s" fill="freeze"/>
+      <circle cx="45" cy="305" r="5" fill="#0a0a12" stroke="#f59e0b" stroke-width="2"/>
+      <circle cx="45" cy="305" r="2" fill="#f59e0b"/>
+      <text x="65" y="302" font-family="'SF Pro Display','Helvetica Neue',sans-serif" font-size="10" font-weight="500" letter-spacing="1" fill="#f59e0b">DEC 2024 — MAY 2025</text>
+      <text x="65" y="322" font-family="'SF Pro Display','Helvetica Neue',sans-serif" font-size="15" font-weight="700" fill="#e4e4e7">DevNovate Technologies</text>
+      <text x="65" y="340" font-family="'SF Pro Display','Helvetica Neue',sans-serif" font-size="12" fill="#60a5fa">Engineering &amp; Product Operation Manager</text>
+      <text x="65" y="360" font-family="'SF Pro Display','Helvetica Neue',sans-serif" font-size="11" fill="#71717a">→ Scaled event platform to 500K+ users across 100+ events</text>
+      <text x="65" y="377" font-family="'SF Pro Display','Helvetica Neue',sans-serif" font-size="11" fill="#71717a">→ Increased active user base by 45%</text>
     </g>
 
-    <!-- ═══ Entry 4: Kalp Studio ═══ -->
-    <circle cx="49" cy="405" r="7" fill="#58a6ff" filter="url(#glowDot)" opacity="0">
-      <animate attributeName="opacity" values="0;1" dur="0.2s" begin="2.6s" fill="freeze"/>
-      <animate attributeName="r" values="7;9;7" dur="2.8s" begin="2.8s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="49" cy="405" r="3" fill="#0d1117" opacity="0">
-      <animate attributeName="opacity" values="0;1" dur="0.2s" begin="2.6s" fill="freeze"/>
-    </circle>
-    <g opacity="0">
-      <animate attributeName="opacity" values="0;1" dur="0.4s" begin="2.7s" fill="freeze"/>
-      <rect x="70" y="385" width="700" height="85" rx="8" fill="#161b22" stroke="#30363d" stroke-width="0.5"/>
-      <rect x="70" y="385" width="4" height="85" rx="2" fill="#58a6ff"/>
-      <text x="88" y="405" font-family="'Fira Code',monospace" font-size="13" font-weight="bold" fill="#58a6ff">Kalp Studio (Blockchain)</text>
-      <text x="620" y="405" font-family="'Fira Code',monospace" font-size="10" fill="#3fb950">Apr 2024 - Oct 2024</text>
-      <text x="88" y="423" font-family="'Fira Code',monospace" font-size="11" fill="#58a6ff">Ecosystem &amp; Community Intern</text>
-      <text x="88" y="443" font-family="'Fira Code',monospace" font-size="10" fill="#8b949e">Enhanced blockchain adoption &amp; developer engagement</text>
-      <text x="88" y="458" font-family="'Fira Code',monospace" font-size="10" fill="#8b949e">Organized Web3 &amp; Blockchain events</text>
+    <!-- Entry 4: Kalp Studio -->
+    <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="1.6s" fill="freeze"/>
+      <circle cx="45" cy="415" r="5" fill="#0a0a12" stroke="#6366f1" stroke-width="2"/>
+      <circle cx="45" cy="415" r="2" fill="#6366f1"/>
+      <text x="65" y="412" font-family="'SF Pro Display','Helvetica Neue',sans-serif" font-size="10" font-weight="500" letter-spacing="1" fill="#6366f1">APR 2024 — OCT 2024</text>
+      <text x="65" y="432" font-family="'SF Pro Display','Helvetica Neue',sans-serif" font-size="15" font-weight="700" fill="#e4e4e7">Kalp Studio · Blockchain</text>
+      <text x="65" y="450" font-family="'SF Pro Display','Helvetica Neue',sans-serif" font-size="12" fill="#fb7185">Ecosystem &amp; Community Intern</text>
+      <text x="65" y="470" font-family="'SF Pro Display','Helvetica Neue',sans-serif" font-size="11" fill="#71717a">→ Enhanced blockchain adoption &amp; organized Web3 events</text>
     </g>
 
-    <!-- Status bar -->
-    <rect x="0" y="502" width="800" height="18" fill="#161b22"/>
-    <text x="20" y="514" font-family="'Fira Code',monospace" font-size="10" fill="#3fb950">● main</text>
-    <text x="630" y="514" font-family="'Fira Code',monospace" font-size="10" fill="#8b949e">4 roles · 2+ years</text>
   </g>
 </svg>

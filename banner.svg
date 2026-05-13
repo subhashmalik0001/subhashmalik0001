@@ -1,262 +1,150 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400">
   <defs>
-
-    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%"   stop-color="#0e0520"/>
-      <stop offset="30%"  stop-color="#1e0d42"/>
-      <stop offset="62%"  stop-color="#3a1870"/>
-      <stop offset="85%"  stop-color="#2a1050"/>
-      <stop offset="100%" stop-color="#0e0520"/>
+    <!-- Rich dark gradient background -->
+    <linearGradient id="sky" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#06060a"/>
+      <stop offset="35%"  stop-color="#0c0c18"/>
+      <stop offset="65%"  stop-color="#110a20"/>
+      <stop offset="100%" stop-color="#08060e"/>
     </linearGradient>
 
-    <radialGradient id="horizonGlow" cx="50%" cy="68%" r="30%">
-      <stop offset="0%"   stop-color="#ffffff" stop-opacity="0.65"/>
-      <stop offset="18%"  stop-color="#e0c0ff" stop-opacity="0.45"/>
-      <stop offset="45%"  stop-color="#8040d0" stop-opacity="0.2"/>
+    <!-- Subtle ambient light -->
+    <radialGradient id="ambientLeft" cx="15%" cy="40%" r="35%">
+      <stop offset="0%"   stop-color="#7c3aed" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ambientRight" cx="85%" cy="60%" r="30%">
+      <stop offset="0%"   stop-color="#e85d4a" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ambientCenter" cx="50%" cy="55%" r="25%">
+      <stop offset="0%"   stop-color="#ffffff" stop-opacity="0.03"/>
       <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
     </radialGradient>
 
-    <radialGradient id="purpleBloom" cx="50%" cy="50%" r="50%">
-      <stop offset="0%"   stop-color="#6020b0" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
-    </radialGradient>
-
-    <linearGradient id="mtnFar" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%"   stop-color="#2a1255"/>
-      <stop offset="100%" stop-color="#0e0520"/>
+    <!-- Name gradient — warm ember -->
+    <linearGradient id="nameGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#f97066"/>
+      <stop offset="50%"  stop-color="#e85d4a"/>
+      <stop offset="100%" stop-color="#dc4535"/>
     </linearGradient>
 
-    <linearGradient id="mtnMid" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%"   stop-color="#180830"/>
-      <stop offset="100%" stop-color="#080210"/>
-    </linearGradient>
-
-    <linearGradient id="mtnNear" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%"   stop-color="#0a0418"/>
-      <stop offset="100%" stop-color="#000000"/>
-    </linearGradient>
-
-    <linearGradient id="nameGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%"   stop-color="#ff5540"/>
-      <stop offset="100%" stop-color="#e82010"/>
-    </linearGradient>
-
-    <!-- Shimmer sweep: moves left to right every 4s -->
+    <!-- Shimmer -->
     <linearGradient id="shimmer" x1="-100%" y1="0%" x2="-60%" y2="0%" gradientUnits="userSpaceOnUse">
       <stop offset="0%"   stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="50%"  stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="50%"  stop-color="#ffffff" stop-opacity="0.15"/>
       <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-      <animate attributeName="x1" values="-600;1400;-600" dur="4s" repeatCount="indefinite"/>
-      <animate attributeName="x2" values="-200;1800;-200" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="x1" values="-600;1400;-600" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="-200;1800;-200" dur="5s" repeatCount="indefinite"/>
     </linearGradient>
 
-    <!-- Clip to text shape for shimmer overlay -->
     <clipPath id="nameClip">
-      <text x="600" y="245" text-anchor="middle"
-        font-family="'Arial Black','Impact','Franklin Gothic Heavy',sans-serif"
-        font-size="195" font-weight="900" letter-spacing="-6">Subhash</text>
+      <text x="600" y="235" text-anchor="middle"
+        font-family="'SF Pro Display','Helvetica Neue','Arial Black',sans-serif"
+        font-size="180" font-weight="900" letter-spacing="-8">Subhash</text>
     </clipPath>
 
     <filter id="nameShadow" x="-4%" y="-10%" width="108%" height="130%">
-      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.5"/>
+      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#e85d4a" flood-opacity="0.25"/>
     </filter>
+
+    <!-- Noise texture -->
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+
+    <!-- Grid pattern -->
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#ffffff" stroke-width="0.3" opacity="0.04"/>
+    </pattern>
 
     <clipPath id="clip"><rect width="1200" height="400"/></clipPath>
   </defs>
 
   <g clip-path="url(#clip)">
 
-    <!-- SKY -->
+    <!-- Background layers -->
     <rect width="1200" height="400" fill="url(#sky)"/>
-    <rect width="1200" height="400" fill="url(#purpleBloom)"/>
+    <rect width="1200" height="400" fill="url(#ambientLeft)"/>
+    <rect width="1200" height="400" fill="url(#ambientRight)"/>
+    <rect width="1200" height="400" fill="url(#ambientCenter)"/>
+    <rect width="1200" height="400" fill="url(#grid)"/>
 
-    <!-- STARS — distant dim -->
+    <!-- Noise overlay for texture -->
+    <rect width="1200" height="400" filter="url(#noise)" opacity="0.02"/>
+
+    <!-- Floating particles — subtle dots -->
     <g fill="#ffffff">
-      <circle cx="42"   cy="18"  r="0.5" opacity="0.30"/>
-      <circle cx="88"   cy="55"  r="0.4" opacity="0.28"/>
-      <circle cx="135"  cy="30"  r="0.5" opacity="0.32"/>
-      <circle cx="178"  cy="72"  r="0.4" opacity="0.25"/>
-      <circle cx="215"  cy="14"  r="0.5" opacity="0.30"/>
-      <circle cx="258"  cy="48"  r="0.4" opacity="0.27"/>
-      <circle cx="302"  cy="88"  r="0.5" opacity="0.30"/>
-      <circle cx="345"  cy="22"  r="0.4" opacity="0.28"/>
-      <circle cx="388"  cy="65"  r="0.5" opacity="0.32"/>
-      <circle cx="432"  cy="10"  r="0.4" opacity="0.26"/>
-      <circle cx="475"  cy="82"  r="0.5" opacity="0.30"/>
-      <circle cx="518"  cy="38"  r="0.4" opacity="0.28"/>
-      <circle cx="562"  cy="95"  r="0.5" opacity="0.25"/>
-      <circle cx="605"  cy="12"  r="0.4" opacity="0.30"/>
-      <circle cx="648"  cy="75"  r="0.5" opacity="0.28"/>
-      <circle cx="692"  cy="42"  r="0.4" opacity="0.32"/>
-      <circle cx="735"  cy="88"  r="0.5" opacity="0.26"/>
-      <circle cx="778"  cy="20"  r="0.4" opacity="0.30"/>
-      <circle cx="822"  cy="60"  r="0.5" opacity="0.28"/>
-      <circle cx="865"  cy="95"  r="0.4" opacity="0.25"/>
-      <circle cx="908"  cy="35"  r="0.5" opacity="0.30"/>
-      <circle cx="952"  cy="78"  r="0.4" opacity="0.28"/>
-      <circle cx="995"  cy="18"  r="0.5" opacity="0.32"/>
-      <circle cx="1038" cy="55"  r="0.4" opacity="0.26"/>
-      <circle cx="1082" cy="90"  r="0.5" opacity="0.30"/>
-      <circle cx="1125" cy="28"  r="0.4" opacity="0.28"/>
-      <circle cx="1168" cy="65"  r="0.5" opacity="0.25"/>
-      <circle cx="65"   cy="105" r="0.4" opacity="0.22"/>
-      <circle cx="112"  cy="118" r="0.5" opacity="0.24"/>
-      <circle cx="160"  cy="100" r="0.4" opacity="0.20"/>
-      <circle cx="208"  cy="125" r="0.5" opacity="0.22"/>
-      <circle cx="303"  cy="130" r="0.5" opacity="0.20"/>
-      <circle cx="398"  cy="128" r="0.5" opacity="0.24"/>
-      <circle cx="493"  cy="118" r="0.5" opacity="0.22"/>
-      <circle cx="588"  cy="108" r="0.5" opacity="0.24"/>
-      <circle cx="683"  cy="115" r="0.5" opacity="0.20"/>
-      <circle cx="778"  cy="105" r="0.5" opacity="0.24"/>
-      <circle cx="873"  cy="132" r="0.5" opacity="0.22"/>
-      <circle cx="968"  cy="125" r="0.5" opacity="0.20"/>
-      <circle cx="1063" cy="130" r="0.5" opacity="0.20"/>
-      <circle cx="1158" cy="118" r="0.5" opacity="0.22"/>
+      <circle cx="150" cy="80" r="1" opacity="0.15"><animate attributeName="cy" values="80;70;80" dur="6s" repeatCount="indefinite"/></circle>
+      <circle cx="320" cy="120" r="0.8" opacity="0.12"><animate attributeName="cy" values="120;108;120" dur="8s" repeatCount="indefinite"/></circle>
+      <circle cx="500" cy="60" r="1.2" opacity="0.18"><animate attributeName="cy" values="60;48;60" dur="5s" repeatCount="indefinite"/></circle>
+      <circle cx="700" cy="100" r="0.7" opacity="0.10"><animate attributeName="cy" values="100;90;100" dur="7s" repeatCount="indefinite"/></circle>
+      <circle cx="880" cy="70" r="1" opacity="0.14"><animate attributeName="cy" values="70;58;70" dur="9s" repeatCount="indefinite"/></circle>
+      <circle cx="1050" cy="90" r="0.9" opacity="0.12"><animate attributeName="cy" values="90;80;90" dur="6.5s" repeatCount="indefinite"/></circle>
+      <circle cx="230" cy="300" r="0.6" opacity="0.08"><animate attributeName="cy" values="300;290;300" dur="7s" repeatCount="indefinite"/></circle>
+      <circle cx="950" cy="310" r="0.8" opacity="0.10"><animate attributeName="cy" values="310;298;310" dur="8s" repeatCount="indefinite"/></circle>
     </g>
 
-    <!-- STARS — mid brightness -->
-    <g fill="#ffffff">
-      <circle cx="72"   cy="38"  r="0.8" opacity="0.55"/>
-      <circle cx="155"  cy="58"  r="0.7" opacity="0.50"/>
-      <circle cx="240"  cy="28"  r="0.9" opacity="0.58"/>
-      <circle cx="325"  cy="68"  r="0.7" opacity="0.52"/>
-      <circle cx="410"  cy="42"  r="0.8" opacity="0.55"/>
-      <circle cx="495"  cy="20"  r="0.7" opacity="0.50"/>
-      <circle cx="580"  cy="72"  r="0.9" opacity="0.58"/>
-      <circle cx="665"  cy="32"  r="0.7" opacity="0.52"/>
-      <circle cx="750"  cy="58"  r="0.8" opacity="0.55"/>
-      <circle cx="835"  cy="18"  r="0.7" opacity="0.50"/>
-      <circle cx="920"  cy="62"  r="0.9" opacity="0.58"/>
-      <circle cx="1005" cy="38"  r="0.7" opacity="0.52"/>
-      <circle cx="1090" cy="52"  r="0.8" opacity="0.55"/>
-      <circle cx="1175" cy="22"  r="0.7" opacity="0.50"/>
-      <circle cx="190"  cy="45"  r="0.8" fill="#c0d8ff" opacity="0.50"/>
-      <circle cx="460"  cy="55"  r="0.7" fill="#c0d8ff" opacity="0.48"/>
-      <circle cx="720"  cy="40"  r="0.8" fill="#c0d8ff" opacity="0.50"/>
-      <circle cx="980"  cy="50"  r="0.7" fill="#c0d8ff" opacity="0.48"/>
-      <circle cx="1140" cy="38"  r="0.8" fill="#c0d8ff" opacity="0.50"/>
-    </g>
+    <!-- Decorative line — top left -->
+    <line x1="40" y1="0" x2="40" y2="400" stroke="#7c3aed" stroke-width="0.5" opacity="0.12"/>
+    <line x1="80" y1="0" x2="80" y2="400" stroke="#7c3aed" stroke-width="0.3" opacity="0.06"/>
 
-    <!-- STARS — bright foreground -->
-    <circle cx="620"  cy="25"  r="2.0" fill="#ffffff" opacity="0.92"/>
-    <circle cx="880"  cy="38"  r="1.7" fill="#ffffff" opacity="0.88"/>
-    <circle cx="295"  cy="50"  r="1.5" fill="#ffffff" opacity="0.85"/>
-    <circle cx="1045" cy="28"  r="1.6" fill="#ffffff" opacity="0.90"/>
-    <circle cx="168"  cy="35"  r="1.4" fill="#ffffff" opacity="0.82"/>
-    <circle cx="755"  cy="16"  r="1.5" fill="#ffffff" opacity="0.88"/>
-    <circle cx="425"  cy="20"  r="1.3" fill="#ffffff" opacity="0.80"/>
-    <circle cx="960"  cy="55"  r="1.6" fill="#ffffff" opacity="0.78"/>
-    <circle cx="510"  cy="45"  r="1.2" fill="#ffffff" opacity="0.75"/>
-    <circle cx="98"   cy="62"  r="1.4" fill="#ffffff" opacity="0.80"/>
-    <circle cx="1128" cy="48"  r="1.3" fill="#ffffff" opacity="0.85"/>
-    <circle cx="120"  cy="200" r="1.0" fill="#ffffff" opacity="0.50"/>
-    <circle cx="280"  cy="185" r="0.9" fill="#ffffff" opacity="0.45"/>
-    <circle cx="450"  cy="195" r="1.1" fill="#ffffff" opacity="0.50"/>
-    <circle cx="700"  cy="180" r="0.9" fill="#ffffff" opacity="0.42"/>
-    <circle cx="900"  cy="192" r="1.0" fill="#ffffff" opacity="0.48"/>
-    <circle cx="1080" cy="188" r="0.9" fill="#ffffff" opacity="0.44"/>
+    <!-- Decorative line — bottom right -->
+    <line x1="1120" y1="0" x2="1120" y2="400" stroke="#e85d4a" stroke-width="0.5" opacity="0.10"/>
+    <line x1="1160" y1="0" x2="1160" y2="400" stroke="#e85d4a" stroke-width="0.3" opacity="0.05"/>
 
-    <!-- TWINKLE — halo rings on 5 bright stars -->
-    <circle cx="620" cy="25" r="2" fill="#fff" opacity="0">
-      <animate attributeName="r"       values="2;4.5;2"  dur="2.8s" begin="0s"   repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.45;0" dur="2.8s" begin="0s"   repeatCount="indefinite"/>
-    </circle>
-    <circle cx="880" cy="38" r="1.7" fill="#fff" opacity="0">
-      <animate attributeName="r"       values="1.7;4;1.7" dur="3.5s" begin="1.2s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.4;0"   dur="3.5s" begin="1.2s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="295" cy="50" r="1.5" fill="#fff" opacity="0">
-      <animate attributeName="r"       values="1.5;3.5;1.5" dur="4s"   begin="0.6s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.38;0"    dur="4s"   begin="0.6s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="1045" cy="28" r="1.6" fill="#fff" opacity="0">
-      <animate attributeName="r"       values="1.6;3.8;1.6" dur="3.2s" begin="2s"   repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.42;0"    dur="3.2s" begin="2s"   repeatCount="indefinite"/>
-    </circle>
-    <circle cx="755" cy="16" r="1.5" fill="#fff" opacity="0">
-      <animate attributeName="r"       values="1.5;3.5;1.5" dur="5s"   begin="1s"   repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.38;0"    dur="5s"   begin="1s"   repeatCount="indefinite"/>
-    </circle>
+    <!-- Horizontal accent line -->
+    <rect x="0" y="320" width="1200" height="0.5" fill="#ffffff" opacity="0.04"/>
 
-    <!-- HORIZON GLOW -->
-    <rect width="1200" height="400" fill="url(#horizonGlow)"/>
+    <!-- MAIN NAME — shadow layer -->
+    <text x="600" y="235" text-anchor="middle"
+      font-family="'SF Pro Display','Helvetica Neue','Arial Black',sans-serif"
+      font-size="180" font-weight="900" letter-spacing="-8"
+      fill="#000000" opacity="0.3">Subhash</text>
 
-    <!-- MOUNTAIN LAYER 1 — farthest, sharp peaks, purple tint -->
-    <polygon
-      points="-10,400 -10,310 30,295 70,305 110,278 150,290 195,262 240,275
-        285,248 330,260 375,235 420,250 465,228 510,242
-        555,218 600,232 645,210 690,225 735,200 780,215
-        825,192 870,208 915,185 960,200 1005,178 1050,194
-        1095,172 1140,188 1185,168 1210,180 1210,400"
-      fill="url(#mtnFar)" opacity="0.72"/>
-
-    <!-- MOUNTAIN LAYER 2 — mid -->
-    <polygon
-      points="-10,400 -10,345 25,332 65,342 105,318 148,330 192,305
-        238,318 282,292 328,306 372,280 418,295 462,268
-        508,282 552,255 598,270 642,244 688,258 732,232
-        778,248 822,222 868,238 912,212 958,228 1002,202
-        1048,218 1092,192 1138,208 1182,185 1210,195 1210,400"
-      fill="url(#mtnMid)" opacity="0.90"/>
-
-    <!-- MOUNTAIN LAYER 3 — main foreground, sharp jagged peaks -->
-    <polygon
-      points="-10,400 -10,375
-        18,368 45,358 72,365 98,350 125,340 152,348
-        178,332 205,320 232,330 258,312 285,300 312,310
-        338,292 365,278 392,288 418,268 445,255 470,265
-        495,245 520,232 545,242 568,222 592,208 615,220
-        638,200 660,188 682,200 705,178 728,165 750,178
-        772,158 795,144 818,158 840,136 862,122 885,136
-        908,115 930,102 952,116 975,95 998,82 1020,96
-        1042,76 1065,64 1088,78 1110,58 1132,48 1155,62
-        1178,44 1200,38 1210,42 1210,400"
-      fill="url(#mtnNear)"/>
-
-    <!-- MOUNTAIN LAYER 4 — closest dark base -->
-    <polygon
-      points="-10,400 -10,388
-        30,380 72,372 115,380 158,368 200,358 242,366
-        285,354 328,344 370,352 412,340 455,330 498,338
-        540,326 582,316 625,324 668,312 710,302 752,310
-        795,298 838,288 880,296 922,284 965,274 1008,282
-        1050,270 1092,260 1135,268 1178,256 1210,262 1210,400"
-      fill="#040110" opacity="0.95"/>
-
-    <!-- MAIN NAME — shadow -->
-    <text x="600" y="245" text-anchor="middle"
-      font-family="'Arial Black','Impact','Franklin Gothic Heavy',sans-serif"
-      font-size="195" font-weight="900" letter-spacing="-6"
-      fill="#000000" opacity="0.28">Subhash</text>
-    <!-- base red text -->
-    <text x="600" y="245" text-anchor="middle"
-      font-family="'Arial Black','Impact','Franklin Gothic Heavy',sans-serif"
-      font-size="195" font-weight="900" letter-spacing="-6"
+    <!-- MAIN NAME — primary -->
+    <text x="600" y="235" text-anchor="middle"
+      font-family="'SF Pro Display','Helvetica Neue','Arial Black',sans-serif"
+      font-size="180" font-weight="900" letter-spacing="-8"
       fill="url(#nameGrad)" filter="url(#nameShadow)" opacity="0">
       Subhash
-      <animate attributeName="opacity" values="0;1" dur="1.2s" begin="0.2s" fill="freeze"/>
+      <animate attributeName="opacity" values="0;1" dur="1s" begin="0.3s" fill="freeze"/>
     </text>
-    <!-- shimmer overlay clipped to text -->
+
+    <!-- Shimmer on text -->
     <rect x="0" y="60" width="1200" height="220"
       fill="url(#shimmer)" clip-path="url(#nameClip)"/>
 
-    <!-- SUBTEXT -->
-    <text x="600" y="352" text-anchor="middle"
-      font-family="'Segoe UI',Arial,sans-serif"
-      font-size="18" font-weight="300" letter-spacing="2"
-      fill="#ffffff" opacity="0">
-      Software Engineer  |  Tech Enthusiast  |  Program Manager
-      <animate attributeName="opacity" values="0;0.78" dur="1.5s" begin="0.9s" fill="freeze"/>
+    <!-- Subtitle -->
+    <text x="600" y="290" text-anchor="middle"
+      font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif"
+      font-size="15" font-weight="400" letter-spacing="6"
+      fill="#a1a1aa" opacity="0">
+      SOFTWARE ENGINEER  ·  STARTUP FOUNDER  ·  TECH LEADER
+      <animate attributeName="opacity" values="0;1" dur="1s" begin="0.8s" fill="freeze"/>
     </text>
 
-    <!-- SIDE LABEL -->
+    <!-- Bottom accent bar -->
+    <rect x="480" y="310" width="240" height="2" rx="1" fill="#e85d4a" opacity="0">
+      <animate attributeName="opacity" values="0;0.6" dur="0.8s" begin="1.2s" fill="freeze"/>
+    </rect>
+
+    <!-- Location tag -->
+    <text x="600" y="345" text-anchor="middle"
+      font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif"
+      font-size="12" font-weight="300" letter-spacing="3"
+      fill="#52525b" opacity="0">
+      CHANDIGARH, INDIA
+      <animate attributeName="opacity" values="0;1" dur="0.8s" begin="1.5s" fill="freeze"/>
+    </text>
+
+    <!-- Side label -->
     <text x="22" y="210" text-anchor="middle"
-      font-family="'Segoe UI',Arial,sans-serif"
-      font-size="10" font-weight="400" letter-spacing="5"
-      fill="#ffffff" opacity="0.35"
+      font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif"
+      font-size="9" font-weight="300" letter-spacing="4"
+      fill="#ffffff" opacity="0.15"
       transform="rotate(-90,22,210)">DEVELOPER</text>
-    <rect x="14" y="130" width="1" height="140" fill="#fff" opacity="0.15"/>
 
   </g>
 </svg>
